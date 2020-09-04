@@ -1,0 +1,184 @@
+body,
+p,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+.app {
+  position: relative;
+  background-color: #0e0220;
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+}
+.section {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  /* background-size: cover; */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #0e0220;
+  /* background-image: linear-gradient(to bottom,#000000 0%,#5788fe 100%); */
+  display: flex;
+  align-items: center;
+}
+.bg-star {
+  width: 100%;
+  height: 100%;
+  opacity: .3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@keyframes rotating{
+  0%{
+    transform:rotate(0deg)
+  } to {
+    transform:rotate(1turn)
+  }
+}
+.box-bgm {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border-radius: 15px;
+  background-image: url(../img/bgm.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.box-bgm.rotating {
+  animation: rotating 3s linear infinite;
+}
+.box-content {
+  width: 90%;
+  height: 40%;
+  margin: 0 auto;
+  color: #333;
+  padding: 10px;
+  margin-top: 13rem;
+
+  position:relative;
+  /* background: -webkit-gradient(linear, 0% 20%, 0% 92%, from(#fff), to(#f3f3f3), color-stop(.1,#fff)); */
+  background-color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-top-left-radius: 60px 5px;
+  border-top-right-radius: 60px 5px;
+  border-bottom-right-radius: 60px 60px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  display: flex;
+  flex-flow: column;
+}
+.box-content::before {
+  content: '';
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 30px;
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.3);
+  transform: rotate(-20deg) skew(-40deg,-3deg) translate(-13px,-13px);
+}
+.box-content::after {
+  content: '';
+  z-index: -10;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.2);
+  transform: rotate(0deg) translate(-45px,-20px) skew(20deg);
+}
+.box-content_header {
+  color: #fff;
+  /* 中空艺术字 */
+  /* text-shadow: 0 0 2px #333; */
+  /* 投影字体 */
+  text-shadow: 5px 5px 5px #333, 0px 0px 2px #333;
+  text-align: center;
+  font-size: 4.5rem;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  /* https://www.w3.org/Style/Examples/007/fonts.zh_CN.html */
+}
+.box-content p, .box-content footer {
+  font-family: SimSun;
+  font-size: 1.2rem;
+}
+
+.box-content_body {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.box-content_body-date {
+  font-size: 1.3rem;
+}
+.box-content_footer {
+  position: relative;
+}
+.box-content_footer-welcome {
+  font-family: Apple Chancery, cursive;
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 0 0 2px #333;
+  margin-top: 20px;
+}
+.box-content_footer-zhWelcome {
+  position: relative;
+  font-size: .8rem;
+  letter-spacing: 3px;
+}
+.box-content_footer-zhWelcome::before {
+  position: absolute;
+  content: '.';
+  top: 0;
+  left: -10px;
+  line-height: 1rem;
+}
+.box-content_footer-zhWelcome::after {
+  position: absolute;
+  content: '.';
+  top: 0;
+  right: -10px;
+  line-height: 1rem;
+}
+.box-content_footer-and {
+  font-size: 3rem;
+  position: absolute;
+  top: -1.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* color: #fff; */
+}
+.box-content_footer-name {
+  border: 1px solid #e9cba0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4px;
+  border-radius: 2rem;
+  /* background-color: #090706; */
+  /* color: #fff; */
+  padding: 3px 12px;
+}
+
+.box1 {
+  background-image: url(../img/bg.png);
+}

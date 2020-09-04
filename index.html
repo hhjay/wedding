@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>黄会杰 & 黄凤仙 结婚啦</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/index.css">
+  </head>
+  <body>
+    <div class="app" id="app">
+      <div class="section box1">
+        <canvas class="bg-star" id="starCanvas"></canvas>
+        <div :class='bgmClass' @click='handleBgm'></div>
+        <div class="box-content">
+          <h2 class="box-content_header">
+            Wedding
+          </h2>
+          <div class="box-content_body">
+            <p class="welcome-name">
+              欢迎 <b>{{ intvName }}</b>
+            </p>
+            <p class="box-content_body-date"><b>2020/10/12</b>(星期一)</p>
+          </div>
+          <footer class="box-content_footer">
+            <span class="box-content_footer-name">黄会杰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄凤仙</span>
+            <span class="box-content_footer-and">&</span>
+
+            <h3 class="box-content_footer-welcome">WelCome</h3>
+            <span class="box-content_footer-zhWelcome">诚挚邀请您参加我们的婚礼</span>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/star.js"></script>
+    <script src="./assets/js/vue.js"></script>
+    <script>
+      var App = new Vue({
+        el: '#app',
+        data: {
+          bgmRing: true,
+        },
+        computed: {
+          bgmClass () {
+            return this.bgmRing && 'box-bgm rotating' || 'box-bgm';
+          },
+          intvName () {
+            return this.getQueryVariable('name');
+          },
+        },
+        mounted () {
+          // console.log(this.intvName);
+        },
+        methods: {
+          handleBgm () {
+            this.bgmRing = !this.bgmRing;
+          },
+          getQueryVariable (variable = 'name') {
+            let query = decodeURI(window.location.search.substring(1)); //转义一下
+            let vars = query.split("&");
+            for (let i=0; i<vars.length; i++) {
+              let pair = vars[i].split("=");
+              if (pair[0] === variable) return pair[1]
+            }
+            return '';
+          }
+        }
+      })
+      // let content = 'Happy Wedding';
+      // let app = document.querySelector('#app');
+      // let count = content.length;
+      // let current = 0;
+      // let timer = setInterval(()=>{
+      //   current = current + 1;
+      //   console.log(11, current);
+      //   app.innerHTML = content.substring(0, current);
+      //   if( current >= count ) {
+      //     clearInterval(timer);
+      //   }
+      // }, 500)
+    </script>
+  </body>
+</html>
